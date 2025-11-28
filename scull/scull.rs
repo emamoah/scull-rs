@@ -226,7 +226,7 @@ impl MiscDevice for ScullDevice {
         let data = data.as_mut().ok_or(retval)?;
 
         if data[s_pos].is_none() {
-            *&mut data[s_pos] = Some(KBox::new(kvec![0; quantum]?, GFP_KERNEL)?);
+            data[s_pos] = Some(KBox::new(kvec![0; quantum]?, GFP_KERNEL)?);
         }
 
         let quantum_vec = data[s_pos].as_mut().ok_or(retval)?;
