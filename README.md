@@ -4,7 +4,7 @@ This project is an attempt to reimplement the linux device driver samples from t
 
 [Rust for Linux](https://rust-for-linux.com/) is an ongoing project to integrate Rust into the linux kernel. Abstractions are being developed to enable drivers written in Rust interface easily with the existing API's.
 
-The code in this project is currently not on par with the reference sample, and should be updated as the relevant abstractions are available.
+The code in this project is currently not on par with the reference sample, and should be updated as the relevant abstractions become available.
 
 ## Building
 
