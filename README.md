@@ -2,7 +2,7 @@
 
 This project is an attempt to reimplement the linux device driver samples from the book "[Linux Device Drivers, 3rd Edition](https://lwn.net/Kernel/LDD3/)" (LDD3), originally written in C, in the Rust language.
 
-The [Rust for Linux Project](https://rust-for-linux.com/) is an ongoing experiment to integrate Rust into the linux kernel. Abstractions are being developed to enable drivers written in Rust interface easily with the existing API's.
+[Rust for Linux](https://rust-for-linux.com/) is an ongoing project to integrate Rust into the linux kernel. Abstractions are being developed to enable drivers written in Rust interface easily with the existing API's.
 
 The code in this project is currently not on par with the reference sample, and should be updated as the relevant abstractions are available.
 
