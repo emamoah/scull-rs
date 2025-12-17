@@ -165,16 +165,10 @@ impl MiscDevice for ScullDevice {
         // Follow the list up to the right position
         dptr = dev.follow(item);
 
-        let Some(dptr) = dptr else { return Ok(retval) };
-        let Some(data) = dptr.data.as_ref() else {
-            return Ok(retval);
-        };
-
-        if data[s_pos].is_none() {
-            return Ok(retval);
-        }
-
-        let Some(quantum_vec) = data[s_pos].as_ref() else {
+        let Some(quantum_vec) = dptr
+            .and_then(|dptr| dptr.data.as_ref())
+            .and_then(|data| data[s_pos].as_ref())
+        else {
             return Ok(retval);
         };
 
