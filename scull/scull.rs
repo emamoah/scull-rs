@@ -92,7 +92,7 @@ impl ScullDevice {
         let qs = &mut self.data;
 
         // Allocate first qset explicitly if need be
-        if let None = qs {
+        if qs.is_none() {
             *qs = Some(KBox::new(ScullQset::new(), GFP_KERNEL).ok()?);
         }
 
@@ -107,7 +107,7 @@ impl ScullDevice {
             qs = qs.next.as_mut()?;
         }
 
-        return Some(qs);
+        Some(qs)
     }
 }
 
@@ -215,7 +215,7 @@ impl MiscDevice for ScullDevice {
         let dptr = dptr.ok_or(retval)?;
         let data = &mut dptr.data;
 
-        if let None = data {
+        if data.is_none() {
             *data = Some(KVec::with_capacity(qset, GFP_KERNEL)?);
             if let Some(data) = data {
                 for _i in 0..qset {
